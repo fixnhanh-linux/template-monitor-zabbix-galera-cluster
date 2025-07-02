@@ -5,8 +5,8 @@ Bước 1: Tải và áp dụng cấu hình
 git clone https://github.com/fixnhanh-linux/template-monitor-zabbix-galera-cluster.git
 cd template-monitor-zabbix-galera-cluster
 
-# Áp dụng cấu hình
 sudo cp userparameter_galera.conf /etc/zabbix/zabbix_agentd.d/
+
 sudo systemctl restart zabbix-agent
 
 Bước 2: Import template
