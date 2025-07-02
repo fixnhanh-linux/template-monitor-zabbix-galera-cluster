@@ -1,0 +1,517 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<zabbix_export>
+    <version>6.2</version>
+    <date>2025-07-02T15:15:53Z</date>
+    <template_groups>
+        <template_group>
+            <uuid>7df96b18c230490a9a0a9e2307226338</uuid>
+            <name>Templates</name>
+        </template_group>
+    </template_groups>
+    <templates>
+        <template>
+            <uuid>e5a4fcf1ff704ab8abb14cc7a87dd2c9</uuid>
+            <template>Template App Galera Cluster</template>
+            <name>Template App Galera Cluster</name>
+            <groups>
+                <group>
+                    <name>Templates</name>
+                </group>
+            </groups>
+            <items>
+                <item>
+                    <uuid>4d27b70d3f734d55989d1f7443aec80a</uuid>
+                    <name>WSREP: Cluster conf ID</name>
+                    <key>galera.cluster_conf_id</key>
+                    <delay>60</delay>
+                    <history>7d</history>
+                    <trends>0</trends>
+                    <value_type>TEXT</value_type>
+                    <tags>
+                        <tag>
+                            <tag>Application</tag>
+                            <value>Galera</value>
+                        </tag>
+                    </tags>
+                </item>
+                <item>
+                    <uuid>c5c255006e054f0cb438b1c71342884e</uuid>
+                    <name>WSREP: Cluster Size</name>
+                    <key>galera.cluster_size</key>
+                    <delay>60</delay>
+                    <history>7d</history>
+                    <tags>
+                        <tag>
+                            <tag>Application</tag>
+                            <value>Galera</value>
+                        </tag>
+                    </tags>
+                    <triggers>
+                        <trigger>
+                            <uuid>bb2a3288f0ed4908bc53185b224cd3dd</uuid>
+                            <expression>last(/Template App Galera Cluster/galera.cluster_size)&lt;=2</expression>
+                            <name>Galera Cluster members problems</name>
+                            <priority>WARNING</priority>
+                            <description>Check if mysql and garbd are up and running ok</description>
+                            <manual_close>YES</manual_close>
+                        </trigger>
+                    </triggers>
+                </item>
+                <item>
+                    <uuid>6439103141664dd88cfc547ef89d1992</uuid>
+                    <name>WSREP: Cluster Status</name>
+                    <key>galera.cluster_status</key>
+                    <delay>60</delay>
+                    <history>7d</history>
+                    <trends>0</trends>
+                    <value_type>TEXT</value_type>
+                    <tags>
+                        <tag>
+                            <tag>Application</tag>
+                            <value>Galera</value>
+                        </tag>
+                    </tags>
+                </item>
+                <item>
+                    <uuid>1e91d116e54a45c29ced9616482d8a87</uuid>
+                    <name>WSREP: Replicated Bytes</name>
+                    <key>galera.replicated_bytes</key>
+                    <delay>60</delay>
+                    <history>7d</history>
+                    <units>B</units>
+                    <tags>
+                        <tag>
+                            <tag>Application</tag>
+                            <value>Galera</value>
+                        </tag>
+                    </tags>
+                </item>
+                <item>
+                    <uuid>7bd7b059bbf748e89134f65db473eaef</uuid>
+                    <name>WSREP: Connected</name>
+                    <key>galera.wsrep_connected</key>
+                    <delay>60</delay>
+                    <history>7d</history>
+                    <trends>0</trends>
+                    <value_type>TEXT</value_type>
+                    <tags>
+                        <tag>
+                            <tag>Application</tag>
+                            <value>Galera</value>
+                        </tag>
+                    </tags>
+                </item>
+                <item>
+                    <uuid>3c03759667e94f7eb262f03f618303c7</uuid>
+                    <name>WSREP: Evs State</name>
+                    <key>galera.wsrep_evs_state</key>
+                    <delay>60</delay>
+                    <history>7d</history>
+                    <trends>0</trends>
+                    <value_type>TEXT</value_type>
+                    <tags>
+                        <tag>
+                            <tag>Application</tag>
+                            <value>Galera</value>
+                        </tag>
+                    </tags>
+                </item>
+                <item>
+                    <uuid>d73aff9bc3c64ce49432cac26d6c0547</uuid>
+                    <name>WSREP: Flow Control Paused</name>
+                    <key>galera.wsrep_flow_control_paused</key>
+                    <delay>60</delay>
+                    <history>7d</history>
+                    <value_type>FLOAT</value_type>
+                    <tags>
+                        <tag>
+                            <tag>Application</tag>
+                            <value>Galera</value>
+                        </tag>
+                    </tags>
+                </item>
+                <item>
+                    <uuid>c9f680a73e7143e5975adeb0b52b9a05</uuid>
+                    <name>WSREP: Flow Control Received</name>
+                    <key>galera.wsrep_flow_control_recv</key>
+                    <delay>60</delay>
+                    <history>7d</history>
+                    <tags>
+                        <tag>
+                            <tag>Application</tag>
+                            <value>Galera</value>
+                        </tag>
+                    </tags>
+                </item>
+                <item>
+                    <uuid>fe93743ee0a94ae0836bb10cccc385cc</uuid>
+                    <name>WSREP: Flow Control Sent</name>
+                    <key>galera.wsrep_flow_control_sent</key>
+                    <delay>60</delay>
+                    <history>7d</history>
+                    <tags>
+                        <tag>
+                            <tag>Application</tag>
+                            <value>Galera</value>
+                        </tag>
+                    </tags>
+                </item>
+                <item>
+                    <uuid>c7af00938a684cc1bf6c46a0279147f2</uuid>
+                    <name>WSREP: GCOMM UUID</name>
+                    <key>galera.wsrep_gcom_uuid</key>
+                    <delay>60</delay>
+                    <history>7d</history>
+                    <trends>0</trends>
+                    <value_type>TEXT</value_type>
+                    <tags>
+                        <tag>
+                            <tag>Application</tag>
+                            <value>Galera</value>
+                        </tag>
+                    </tags>
+                </item>
+                <item>
+                    <uuid>a29535dfd27141a3ba80f1c1796b2cf1</uuid>
+                    <name>WSREP: Last Commited</name>
+                    <key>galera.wsrep_last_committed</key>
+                    <delay>60</delay>
+                    <history>7d</history>
+                    <tags>
+                        <tag>
+                            <tag>Application</tag>
+                            <value>Galera</value>
+                        </tag>
+                    </tags>
+                </item>
+                <item>
+                    <uuid>bf55c5bfb5f345498db2e99ca4bf30c7</uuid>
+                    <name>WSREP: Local BF Aborts</name>
+                    <key>galera.wsrep_local_bf_aborts</key>
+                    <delay>60</delay>
+                    <history>7d</history>
+                    <tags>
+                        <tag>
+                            <tag>Application</tag>
+                            <value>Galera</value>
+                        </tag>
+                    </tags>
+                </item>
+                <item>
+                    <uuid>92106f81aeb94c0cba2d2460ad7eba54</uuid>
+                    <name>WSREP: Local Receive Queue</name>
+                    <key>galera.wsrep_local_recv_queue</key>
+                    <delay>60</delay>
+                    <history>7d</history>
+                    <tags>
+                        <tag>
+                            <tag>Application</tag>
+                            <value>Galera</value>
+                        </tag>
+                    </tags>
+                </item>
+                <item>
+                    <uuid>2c9527bb392549d096bb507d95667565</uuid>
+                    <name>WSREP: Local Send Queue</name>
+                    <key>galera.wsrep_local_send_queue</key>
+                    <delay>60</delay>
+                    <history>7d</history>
+                    <tags>
+                        <tag>
+                            <tag>Application</tag>
+                            <value>Galera</value>
+                        </tag>
+                    </tags>
+                </item>
+                <item>
+                    <uuid>0c7b3e36f1324eb698877fa792511be6</uuid>
+                    <name>WSREP: Local State</name>
+                    <key>galera.wsrep_local_state</key>
+                    <delay>30</delay>
+                    <history>7d</history>
+                    <valuemap>
+                        <name>Galera State</name>
+                    </valuemap>
+                    <tags>
+                        <tag>
+                            <tag>Application</tag>
+                            <value>Galera</value>
+                        </tag>
+                    </tags>
+                    <triggers>
+                        <trigger>
+                            <uuid>dd337eb3d45b4dda8ab618fb7b892a5f</uuid>
+                            <expression>last(/Template App Galera Cluster/galera.wsrep_local_state)=3</expression>
+                            <name>Galera Cluster rejoined from {HOST.NAME}</name>
+                            <priority>WARNING</priority>
+                        </trigger>
+                        <trigger>
+                            <uuid>03ea25c489254ddaa0f467532e4a9616</uuid>
+                            <expression>last(/Template App Galera Cluster/galera.wsrep_local_state)&lt;2</expression>
+                            <name>Galera Cluster State problem on {HOST.NAME}</name>
+                            <priority>HIGH</priority>
+                        </trigger>
+                    </triggers>
+                </item>
+                <item>
+                    <uuid>cf6f5322a1654734b563e096b475da42</uuid>
+                    <name>WSREP: Local State comment</name>
+                    <key>galera.wsrep_local_state_comment</key>
+                    <delay>60</delay>
+                    <history>7d</history>
+                    <trends>0</trends>
+                    <value_type>TEXT</value_type>
+                    <tags>
+                        <tag>
+                            <tag>Application</tag>
+                            <value>Galera</value>
+                        </tag>
+                    </tags>
+                </item>
+                <item>
+                    <uuid>6646953af6fa476ba3573a6656d7f743</uuid>
+                    <name>WSREP: Local State UUID</name>
+                    <key>galera.wsrep_local_state_uuid</key>
+                    <delay>60</delay>
+                    <history>7d</history>
+                    <trends>0</trends>
+                    <value_type>TEXT</value_type>
+                    <tags>
+                        <tag>
+                            <tag>Application</tag>
+                            <value>Galera</value>
+                        </tag>
+                    </tags>
+                </item>
+                <item>
+                    <uuid>018ed69cbf374f9fb9dd7fa86c1cda7f</uuid>
+                    <name>WSREP: Ready</name>
+                    <key>galera.wsrep_ready</key>
+                    <delay>60</delay>
+                    <history>7d</history>
+                    <trends>0</trends>
+                    <value_type>TEXT</value_type>
+                    <tags>
+                        <tag>
+                            <tag>Application</tag>
+                            <value>Galera</value>
+                        </tag>
+                    </tags>
+                </item>
+                <item>
+                    <uuid>b10c3627195c414fae3976837657ea72</uuid>
+                    <name>WSREP: Received bytes</name>
+                    <key>galera.wsrep_received_bytes</key>
+                    <delay>60</delay>
+                    <history>7d</history>
+                    <units>B</units>
+                    <tags>
+                        <tag>
+                            <tag>Application</tag>
+                            <value>Galera</value>
+                        </tag>
+                    </tags>
+                </item>
+                <item>
+                    <uuid>56c8d562a12a48b482fcf76e5dc34e51</uuid>
+                    <name>WSREP: Replicated Data Bytes</name>
+                    <key>galera.wsrep_repl_data_bytes</key>
+                    <delay>60</delay>
+                    <history>7d</history>
+                    <units>B</units>
+                    <tags>
+                        <tag>
+                            <tag>Application</tag>
+                            <value>Galera</value>
+                        </tag>
+                    </tags>
+                </item>
+                <item>
+                    <uuid>edd828ec3b9246628f56a880ef8777fc</uuid>
+                    <name>WSREP: Replicated Keys</name>
+                    <key>galera.wsrep_repl_keys</key>
+                    <delay>60</delay>
+                    <history>7d</history>
+                    <tags>
+                        <tag>
+                            <tag>Application</tag>
+                            <value>Galera</value>
+                        </tag>
+                    </tags>
+                </item>
+                <item>
+                    <uuid>bd08693db1224943a915f69c6e861483</uuid>
+                    <name>WSREP: Replicated Keys Bytes</name>
+                    <key>galera.wsrep_repl_keys_bytes</key>
+                    <delay>60</delay>
+                    <history>7d</history>
+                    <units>B</units>
+                    <tags>
+                        <tag>
+                            <tag>Application</tag>
+                            <value>Galera</value>
+                        </tag>
+                    </tags>
+                </item>
+                <item>
+                    <uuid>d30e2c56650443809887e413f8fc1be8</uuid>
+                    <name>WSREP: Replicated Other Bytes</name>
+                    <key>galera.wsrep_repl_other_bytes</key>
+                    <delay>60</delay>
+                    <history>7d</history>
+                    <units>B</units>
+                    <tags>
+                        <tag>
+                            <tag>Application</tag>
+                            <value>Galera</value>
+                        </tag>
+                    </tags>
+                </item>
+                <item>
+                    <uuid>ca6fd7b3e0c54bcbbf2f340b446e3fb5</uuid>
+                    <name>MySQL Port 3306 Status</name>
+                    <key>mysql.port_check</key>
+                    <description>Checks if MySQL default port (3306) is responding</description>
+                    <tags>
+                        <tag>
+                            <tag>Tag</tag>
+                            <value>port_mysql</value>
+                        </tag>
+                    </tags>
+                </item>
+                <item>
+                    <uuid>db7c3a37be7c478493ac75c440d020df</uuid>
+                    <name>MySQL Port 3306 Status (5s)</name>
+                    <key>mysql.port_check_timeout</key>
+                </item>
+                <item>
+                    <uuid>e8e88ece945d40ebb7e125329f69ef64</uuid>
+                    <name>Number of running MySQL</name>
+                    <key>proc.num[,,,mysqld]</key>
+                    <delay>60</delay>
+                    <history>7d</history>
+                    <triggers>
+                        <trigger>
+                            <uuid>2592cd98722840c1901869dde8524aa3</uuid>
+                            <expression>last(/Template App Galera Cluster/proc.num[,,,mysqld])=0</expression>
+                            <name>MySQL Server not running on {HOST.HOST}</name>
+                            <priority>HIGH</priority>
+                            <tags>
+                                <tag>
+                                    <tag>Tag</tag>
+                                    <value>Status MySQL</value>
+                                </tag>
+                            </tags>
+                        </trigger>
+                    </triggers>
+                </item>
+            </items>
+            <valuemaps>
+                <valuemap>
+                    <uuid>5b40639c0f87407999ea288ada1d61d9</uuid>
+                    <name>Galera State</name>
+                    <mappings>
+                        <mapping>
+                            <value>1</value>
+                            <newvalue>Joining</newvalue>
+                        </mapping>
+                        <mapping>
+                            <value>2</value>
+                            <newvalue>Donor/Desynced</newvalue>
+                        </mapping>
+                        <mapping>
+                            <value>3</value>
+                            <newvalue>Joined</newvalue>
+                        </mapping>
+                        <mapping>
+                            <value>4</value>
+                            <newvalue>Synced</newvalue>
+                        </mapping>
+                    </mappings>
+                </valuemap>
+            </valuemaps>
+        </template>
+    </templates>
+    <triggers>
+        <trigger>
+            <uuid>f046fcbba72d4033acc1768594a5d619</uuid>
+            <expression>last(/Template App Galera Cluster/mysql.port_check)=0 or last(/Template App Galera Cluster/mysql.port_check_timeout)=0</expression>
+            <name>MySQL Port 3306 is down on {HOST.NAME}</name>
+            <priority>HIGH</priority>
+            <description>MySQL default port is not responding</description>
+            <tags>
+                <tag>
+                    <tag>Tag</tag>
+                    <value>Port_MySQL</value>
+                </tag>
+            </tags>
+        </trigger>
+        <trigger>
+            <uuid>a963aee695ed43a3bb8b273935e41ae3</uuid>
+            <expression>last(/Template App Galera Cluster/mysql.port_check)=0 or last(/Template App Galera Cluster/mysql.port_check_timeout)=0</expression>
+            <name>MySQL port unreachable or timeout on {HOST.NAME}</name>
+            <priority>HIGH</priority>
+        </trigger>
+    </triggers>
+    <graphs>
+        <graph>
+            <uuid>517291526322485cb93d141dd6c9d252</uuid>
+            <name>Galera Replication Information</name>
+            <graph_items>
+                <graph_item>
+                    <color>1A7C11</color>
+                    <calc_fnc>ALL</calc_fnc>
+                    <item>
+                        <host>Template App Galera Cluster</host>
+                        <key>galera.wsrep_received_bytes</key>
+                    </item>
+                </graph_item>
+                <graph_item>
+                    <sortorder>1</sortorder>
+                    <color>F63100</color>
+                    <calc_fnc>ALL</calc_fnc>
+                    <item>
+                        <host>Template App Galera Cluster</host>
+                        <key>galera.replicated_bytes</key>
+                    </item>
+                </graph_item>
+                <graph_item>
+                    <sortorder>2</sortorder>
+                    <color>2774A4</color>
+                    <calc_fnc>ALL</calc_fnc>
+                    <item>
+                        <host>Template App Galera Cluster</host>
+                        <key>galera.wsrep_repl_data_bytes</key>
+                    </item>
+                </graph_item>
+                <graph_item>
+                    <sortorder>3</sortorder>
+                    <color>A54F10</color>
+                    <calc_fnc>ALL</calc_fnc>
+                    <item>
+                        <host>Template App Galera Cluster</host>
+                        <key>galera.wsrep_repl_keys</key>
+                    </item>
+                </graph_item>
+                <graph_item>
+                    <sortorder>4</sortorder>
+                    <color>FC6EA3</color>
+                    <calc_fnc>ALL</calc_fnc>
+                    <item>
+                        <host>Template App Galera Cluster</host>
+                        <key>galera.wsrep_repl_keys_bytes</key>
+                    </item>
+                </graph_item>
+                <graph_item>
+                    <sortorder>5</sortorder>
+                    <color>6C59DC</color>
+                    <calc_fnc>ALL</calc_fnc>
+                    <item>
+                        <host>Template App Galera Cluster</host>
+                        <key>galera.wsrep_repl_other_bytes</key>
+                    </item>
+                </graph_item>
+            </graph_items>
+        </graph>
+    </graphs>
+</zabbix_export>
