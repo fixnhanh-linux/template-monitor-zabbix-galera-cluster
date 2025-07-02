@@ -6,6 +6,17 @@
 ![Galera](https://img.shields.io/badge/Galera-4%2B-orange)
 
 Tự động triển khai giám sát Galera Cluster trên Zabbix với script all-in-one. Hỗ trợ export template XML, thu thập metrics cluster và kiểm tra trạng thái node nhanh chóng.
+## 📅 Kế hoạch triển khai
+
+| Bước | Nội dung                                               | Ghi chú                            |
+|------|--------------------------------------------------------|------------------------------------|
+| 1    | Tạo user giám sát MySQL (`zabbix`)                     | Cấp quyền `PROCESS`, `REPLICATION CLIENT` |
+| 2    | Cấu hình `UserParameter` cho Zabbix Agent              | Tạo file `.conf` riêng             |
+| 3    | Khởi động lại dịch vụ `zabbix-agent`                   | Kiểm tra status                    |
+| 4    | Kiểm tra metric từ `zabbix_get`                        | Xác minh dữ liệu trả về            |
+| 5    | Import template XML vào Zabbix                         | Dùng file `template_galera_zabbix.xml` |
+| 6    | Gán template cho host phù hợp                          | Gán đúng IP/node                   |
+| 7    | Theo dõi dữ liệu trên dashboard                        | Có thể dùng thêm Grafana           |
 
 ---
 
