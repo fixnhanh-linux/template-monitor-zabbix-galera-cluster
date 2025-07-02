@@ -1,0 +1,1 @@
+# template-monitor-zabbix-galera-cluster
